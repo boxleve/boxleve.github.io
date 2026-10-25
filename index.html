@@ -12,7 +12,7 @@
   :root { --fundo:#1d2129; --cartao:#262b36; --linha:#343a47; --texto:#e8ecf2; --suave:#aeb7c7; --azul:#2bb3e8; --laranja:#f7942e; }
   * { box-sizing: border-box; }
   body { margin:0; font-family: Roboto, system-ui, -apple-system, "Segoe UI", sans-serif; background:var(--fundo); color:var(--texto); line-height:1.6; }
-  a { color:#7cc4ff; }
+  a { color:#7cc4ff; overflow-wrap:anywhere; }
   .wrap { max-width: 980px; margin: 0 auto; padding: 0 16px; }
   header { padding: 48px 0 24px; text-align:center; }
   .logo { width:72px; height:72px; border-radius:50%; background:linear-gradient(135deg,#2bb3e8,#3d4fd0); display:inline-grid; place-items:center; }
@@ -23,10 +23,11 @@
   .print { width:100%; height:auto; border-radius:14px; border:1px solid var(--linha); box-shadow:0 20px 50px rgba(0,0,0,.45); display:block; }
   section { padding: 36px 0; border-top: 1px solid var(--linha); }
   h2 { font-size: 26px; font-weight: 400; margin: 0 0 18px; }
+  h3 { font-size: 19px; font-weight: 500; margin: 26px 0 12px; color: var(--azul); }
   .passos { counter-reset: p; list-style: none; padding: 0; margin: 0; display:grid; gap:14px; }
   .passos li { counter-increment: p; background: var(--cartao); border-radius: 12px; padding: 16px 18px 16px 62px; position: relative; }
   .passos li::before { content: counter(p); position:absolute; left:18px; top:14px; width:30px; height:30px; border-radius:50%; background:var(--azul); color:#0d1b24; font-weight:700; display:grid; place-items:center; }
-  code, .link { background:#11141a; padding:2px 8px; border-radius:6px; font-family: ui-monospace, monospace; font-size: .95em; word-break: break-all; }
+  code, .link { background:#11141a; padding:2px 8px; border-radius:6px; font-family: ui-monospace, monospace; font-size: .95em; overflow-wrap: anywhere; }
   .grade { display:grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap:14px; }
   .item { background: var(--cartao); border-radius: 12px; padding: 16px 18px; }
   .item b { display:block; margin-bottom: 4px; }
@@ -64,13 +65,34 @@
 
   <section id="instalar">
     <h2>Como instalar</h2>
+    <p>Use o navegador da TV Box (Chrome ou outro) ou, se preferir, o app Downloader. O endereço é o mesmo nos dois:
+      <span class="link">boxleve.github.io/baixar</span></p>
+
+    <h3>Pelo navegador</h3>
+    <ol class="passos">
+      <li>Abra o navegador da TV Box, digite <span class="link">boxleve.github.io/baixar</span> na barra de endereço e confirme.</li>
+      <li>O download do arquivo <b>boxleve.apk</b> começa sozinho. Se o navegador avisar que o arquivo pode ser perigoso,
+        escolha <b>Baixar mesmo assim</b> (ou <b>Manter</b>).</li>
+      <li>Quando terminar, toque em <b>Abrir</b> no aviso do navegador. Se o aviso sumiu, abra os <b>Downloads</b>
+        no menu do navegador (os três pontinhos) ou o app <b>Arquivos</b> da caixa e escolha <b>boxleve.apk</b>.</li>
+      <li>Se o Android disser que a instalação está bloqueada, toque em <b>Configurações</b>, ative
+        <b>Permitir desta fonte</b> para o navegador e volte. Depois toque em <b>Instalar</b>.</li>
+    </ol>
+
+    <h3>Pelo app Downloader</h3>
     <ol class="passos">
       <li>Na TV Box, abra a <b>Play Store</b> e instale o app <b>Downloader</b>.</li>
       <li>No Downloader, digite <span class="link">boxleve.github.io/baixar</span> e confirme.</li>
       <li>Quando o Android perguntar, permita que o Downloader instale apps e toque em <b>Instalar</b>.</li>
-      <li>Aperte <b>HOME</b> no controle, escolha <b>Box Leve</b> e depois <b>Sempre</b>.
-        Se ele abrir só desta vez, aperte HOME de novo e escolha <b>Sempre</b>.</li>
     </ol>
+
+    <h3>Depois de instalar</h3>
+    <ol class="passos">
+      <li>Aperte <b>HOME</b> no controle, escolha <b>Box Leve</b> e depois <b>Sempre</b>.
+        Se ele abrir só desta vez, aperte HOME de novo e escolha <b>Sempre</b>.
+        Se a caixa não perguntar nada, abra o Box Leve pela lista de apps: ele mostra o que fazer.</li>
+    </ol>
+    <p>Em caixas com Android 7 ou mais antigo, a permissão fica em Configurações → Segurança → <b>Fontes desconhecidas</b>.</p>
     <p>Prefere o link completo? <a href="https://github.com/boxleve/app/releases/latest/download/boxleve.apk">github.com/boxleve/app/releases/latest/download/boxleve.apk</a></p>
   </section>
 
