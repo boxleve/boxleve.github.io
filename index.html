@@ -20,6 +20,13 @@
   h1 { font-size: clamp(32px, 6vw, 48px); font-weight: 300; margin: 12px 0 0; }
   .slogan { color: var(--suave); font-size: 20px; margin: 4px 0 0; }
   .botao { display:inline-block; margin-top:24px; background:var(--laranja); color:#1b1f27; font-weight:600; padding:12px 26px; border-radius:30px; text-decoration:none; }
+  .botao.grande { font-size:22px; padding:16px 36px; }
+  .botao.leve { background:transparent; color:var(--texto); border:2px solid var(--linha); margin-left:10px; }
+  .botoes { display:flex; flex-wrap:wrap; justify-content:center; align-items:center; gap:0 10px; }
+  .botoes .botao.leve { margin-left:0; }
+  .nota { color:var(--suave); font-size:15px; margin:10px 0 0; }
+  /* Na TV se navega pelas setas do controle: o item focado precisa aparecer bem. */
+  a:focus, summary:focus { outline:4px solid #fff; outline-offset:4px; border-radius:30px; }
   .print { width:100%; height:auto; border-radius:14px; border:1px solid var(--linha); box-shadow:0 20px 50px rgba(0,0,0,.45); display:block; }
   section { padding: 36px 0; border-top: 1px solid var(--linha); }
   h2 { font-size: 26px; font-weight: 400; margin: 0 0 18px; }
@@ -45,7 +52,11 @@
   <div class="logo"><svg viewBox="0 0 108 108"><path fill="#fff" d="M54,32L30,52h7v24h13V62h8v14h13V52h7z"/></svg></div>
   <h1>Box Leve</h1>
   <p class="slogan">Sua TV mais simples.</p>
-  <a class="botao" href="#instalar">Como instalar</a>
+  <div class="botoes">
+    <a class="botao grande" href="baixar/" autofocus>Baixar o Box Leve</a>
+    <a class="botao leve" href="#instalar">Como instalar</a>
+  </div>
+  <p class="nota">Grátis · menos de 100 KB · para TV Box com Android 5 ou mais novo</p>
 </header>
 
 <main class="wrap">
@@ -65,12 +76,13 @@
 
   <section id="instalar">
     <h2>Como instalar</h2>
-    <p>Use o navegador da TV Box (Chrome ou outro) ou, se preferir, o app Downloader. O endereço é o mesmo nos dois:
-      <span class="link">boxleve.github.io/baixar</span></p>
+    <p>Está vendo este site no navegador da TV Box? É só clicar no botão: o download começa e a próxima tela mostra o que fazer.</p>
+    <p><a class="botao grande" href="baixar/" style="margin-top:4px">Baixar o Box Leve</a></p>
+    <p class="nota">Em outro aparelho? Na TV Box, digite <span class="link">boxleve.github.io/baixar</span> no navegador (Chrome ou outro) ou no app Downloader.</p>
 
     <h3>Pelo navegador</h3>
     <ol class="passos">
-      <li>Abra o navegador da TV Box, digite <span class="link">boxleve.github.io/baixar</span> na barra de endereço e confirme.</li>
+      <li>Clique em <b>Baixar o Box Leve</b> aqui no site, ou digite <span class="link">boxleve.github.io/baixar</span> na barra de endereço do navegador.</li>
       <li>O download do arquivo <b>boxleve.apk</b> começa sozinho. Se o navegador avisar que o arquivo pode ser perigoso,
         escolha <b>Baixar mesmo assim</b> (ou <b>Manter</b>).</li>
       <li>Quando terminar, toque em <b>Abrir</b> no aviso do navegador. Se o aviso sumiu, abra os <b>Downloads</b>
